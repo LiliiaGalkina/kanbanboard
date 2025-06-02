@@ -1,0 +1,56 @@
+.header {
+  position: relative;
+  padding: 0.7rem 1.6rem 0.8rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0067A3;
+}
+
+.title {
+  font-size: 2.8rem;
+  color: #FFFFFF;
+}
+
+.menu__list {
+  display: none;
+  position: absolute;
+  top: 6.1rem;
+  right: 0.9rem;
+  width: 13.4rem;
+  height: 6rem;
+  padding: 0.8rem 0.7rem;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+}
+.menu__list::before {
+  content: "";
+  position: absolute;
+  top: -0.6rem;
+  right: 4.6rem;
+  border-left: 0.6rem solid transparent;
+  border-right: 0.6rem solid transparent;
+  border-bottom: 0.6rem solid #FFFFFF;
+}
+.menu__item:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+.menu__link {
+  font-size: 1.4rem;
+  transition: all 0.5s ease;
+}
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logo__user {
+  max-width: 4rem;
+}
+.logo__user img {
+  width: 100%;
+}

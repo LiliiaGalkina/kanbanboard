@@ -1,0 +1,67 @@
+.card {
+  max-height: 53.8rem;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: auto;
+  padding: 1.2rem;
+  scroll-margin-top: 2.9rem;
+  border-radius: 1rem;
+  background-color: #EBECF0;
+}
+.card::-webkit-scrollbar {
+  margin-top: 2.9rem;
+  width: 1.2rem;
+}
+.card::-webkit-scrollbar-track {
+  border-radius: 0.5rem;
+}
+.card::-webkit-scrollbar-thumb {
+  height: 5.2rem;
+  border-radius: 0.5rem;
+  background: #CBCBCB;
+}
+.card__title {
+  margin-bottom: 1.5rem;
+}
+.card__body {
+  margin-bottom: 1.7rem;
+}
+.card__item {
+  padding: 0.7rem 0.8rem;
+  border-radius: 0.5rem;
+  background-color: #FFFFFF;
+}
+.card__item:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.card__newitem {
+  margin-bottom: 1.2rem;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+}
+.card__button {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  color: #5E6C84;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.card__button img {
+  max-width: 1.6rem;
+}
+.card__button p {
+  margin-left: 0.3rem;
+}
+.card__button:hover {
+  color: #000000;
+}
+.card__list {
+  margin-bottom: 1.2rem;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+}

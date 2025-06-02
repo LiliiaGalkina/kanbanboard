@@ -1,0 +1,9 @@
+.container {
+  margin: 0 auto;
+  max-width: 126.5rem;
+  padding: 0 1.5rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

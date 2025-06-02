@@ -1,0 +1,9 @@
+.main {
+    flex: 1 1 auto;
+    padding: 2rem 2rem 3.2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2.4rem;
+    background-color: #0079BF;
+    
+}
