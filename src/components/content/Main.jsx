@@ -77,7 +77,8 @@ function Main() {
 
 
   function changeOption(e){
-   let id = e.target.value;
+   let id = e.target.previousElementSibling.previousElementSibling.value
+   console.log(id)
    setTasksAll(tasksAll.map(task => {
     if(task.id === id){
         if(task.isProgress === true){
