@@ -23,6 +23,12 @@
     padding: 0.8rem 0.7rem;
     border-radius: 0.5rem;
     background-color: #FFFFFF;
+    box-shadow: 0 0 1rem #b5b8c0;
+
+    &_active {
+        display: block;
+    }
+
     &::before {
         content: "";
         position: absolute;
@@ -31,9 +37,6 @@
         border-left: 0.6rem solid transparent;
         border-right: 0.6rem solid transparent;
         border-bottom: 0.6rem solid #FFFFFF;
-        
-       
-
     }
   }
 

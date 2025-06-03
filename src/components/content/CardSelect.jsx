@@ -1,8 +1,9 @@
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
 
-export default function CardSelect({title, items}){
+export default function CardSelect({title, items, newItems}){
     const tasks = items.map(elem => <div key={elem.id} className={style.card__item}>{elem.name}</div>)
+    const options = newItems.map(elem => <option key={elem.id}>{elem.name}</option>)
  return(
     <div className={style.card}>
         <h2 className={style.card__title}>{title}</h2>
@@ -10,8 +11,8 @@ export default function CardSelect({title, items}){
             {tasks}
         </div>
         <select name="tasks" id="tasks" className={style.card__list}>
-            <option>Login page – performance issues</option>
-            <option >Sprint bugfix</option>
+            <option></option>
+           {options}
         </select>
         <button className={style.card__button}>
             <img src={Image} alt="плюс" />

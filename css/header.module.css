@@ -22,6 +22,10 @@
   padding: 0.8rem 0.7rem;
   border-radius: 0.5rem;
   background-color: #FFFFFF;
+  box-shadow: 0 0 1rem #b5b8c0;
+}
+.menu__list_active {
+  display: block;
 }
 .menu__list::before {
   content: "";
