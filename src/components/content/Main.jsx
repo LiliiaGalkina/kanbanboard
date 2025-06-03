@@ -118,6 +118,7 @@ function Main() {
         newItems={tasks2}
         selectType="progress"
         moveItem={moveItem}
+        changeOption={changeOption}
       />
       <CardSelect
         title="Finished"
@@ -125,6 +126,7 @@ function Main() {
         newItems={tasks3}
         selectType="finish"
         moveItem={moveItem}
+        changeOption={changeOption}
       />
     </main>
   );
