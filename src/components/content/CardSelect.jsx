@@ -1,7 +1,10 @@
+import { useState } from "react";
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
 
-export default function CardSelect({title, items, newItems, moveItem, selectType, changeOption, value}){
+export default function CardSelect({title, items, newItems, moveItem, selectType, changeOption}){
+    const [selectValue, setSelectValue] = useState("");
+
     const tasks = items.map(elem => <div key={elem.id} className={style.card__item}>{elem.name}</div>)
     const options = newItems.map(elem => <option key={elem.id} value={elem.id}>{elem.name}</option>)
 
@@ -11,7 +14,7 @@ export default function CardSelect({title, items, newItems, moveItem, selectType
         <div className={style.card__body}>
             {tasks}
         </div>
-        <select name="tasks" id={selectType} className={style.card__list} value={value} onChange={changeOption}>
+        <select name="tasks" id={selectType} className={style.card__list} value={selectValue} onChange={(e) => setSelectValue(e.target.value)}>
             <option></option>
            {options}
         </select>
@@ -19,7 +22,7 @@ export default function CardSelect({title, items, newItems, moveItem, selectType
             <img src={Image} alt="плюс" />
             <p>Add card</p>
         </button>
-        <button className={style.card__submit}>Submit</button>
+        <button className={style.card__submit} onClick={changeOption}>Submit</button>
     </div>
  )
 }

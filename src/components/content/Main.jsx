@@ -74,11 +74,10 @@ function Main() {
     btnSelectSubmit.style.display = "block";
   }
 
-  const [selectValue, setSelectValue] = useState("");
+
 
   function changeOption(e){
    let id = e.target.value;
-   setSelectValue(e.target.value);
    setTasksAll(tasksAll.map(task => {
     if(task.id === id){
         if(task.isProgress === true){
@@ -104,7 +103,7 @@ function Main() {
         inputNewTask={inputNewTask}
         submitNewTask={submitNewTask}
       />
-      <CardSelect title="Ready" items={tasks2} newItems={tasks1} selectType="ready" moveItem={moveItem} changeOption={changeOption} value={selectValue}/>
+      <CardSelect title="Ready" items={tasks2} newItems={tasks1} selectType="ready" moveItem={moveItem} changeOption={changeOption}/>
       <CardSelect title="In Progress" items={tasks3} newItems={tasks2} selectType="progress" moveItem={moveItem}/>
       <CardSelect title="Finished" items={tasks4} newItems={tasks3} selectType="finish" moveItem={moveItem}/>
     </main>
