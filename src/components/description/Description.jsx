@@ -1,17 +1,27 @@
 import React from "react";
-import style from "./description.module.scss"
+import style from "./description.module.scss";
+import { Link, useMatch } from "react-router-dom";
 
 
-export default function Description(){
+export default function Description({tasksAll}){
+    const match = useMatch('/:id');
+    const taskId = match.params.id;
+    const task = tasksAll.filter(elem => elem.id === taskId);
+ 
+
+   
+
     return (
         <div className={style.wrapper}>
             <main className={style.description}>
                 <div className={style.description__body}>
-                    <h2 className={style.description__title}>Main page – performance issues</h2>
+                    <h2 className={style.description__title}>{task[0].name}</h2>
                     <div className={style.description__text}>
-                    Это был темный лес, издали казавшийся непроходимым. Там Пахапиль охотился, глушил рыбу, спал на еловых ветках. Короче – жил, пока русские не выгнали оккупантов. А когда немцы ушли, Пахапиль вернулся. Он появился в Раквере, где советский капитан наградил его медалью. Медаль была украшена четырьмя непонятными словами, фигурой и восклицательным знаком.
+                   { task[0].description ? task[0].description : "no description"}
                     </div>
+                    <Link to={"/"}>
                     <div className={style.description__close}><span></span><span></span></div>
+                    </Link>
                 </div>
             </main>
         </div>

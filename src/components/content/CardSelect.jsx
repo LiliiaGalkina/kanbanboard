@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
+import { Link } from "react-router-dom";
 
 export default function CardSelect({title, items, newItems, moveItem, selectType, changeOption}){
     const [selectValue, setSelectValue] = useState("");
 
-    const tasks = items.map(elem => <div key={elem.id} className={style.card__item}>{elem.name}</div>)
+    const tasks = items.map(elem => <Link to={`/${elem.id}`} key={elem.id} className={style.card__item} ><div >{elem.name}</div></Link>)
+    
     const options = newItems.map(elem => <option key={elem.id} value={elem.id}>{elem.name}</option>)
 
  return(
