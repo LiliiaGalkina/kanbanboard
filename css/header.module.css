@@ -4,12 +4,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0067A3;
+  background-color: #0067a3;
 }
 
 .title {
   font-size: 2.8rem;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .menu__list {
@@ -21,7 +21,7 @@
   height: 6rem;
   padding: 0.8rem 0.7rem;
   border-radius: 0.5rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 0 0 1rem #b5b8c0;
 }
 .menu__list_active {
@@ -34,7 +34,7 @@
   right: 4.6rem;
   border-left: 0.6rem solid transparent;
   border-right: 0.6rem solid transparent;
-  border-bottom: 0.6rem solid #FFFFFF;
+  border-bottom: 0.6rem solid #ffffff;
 }
 .menu__item:not(:last-child) {
   margin-bottom: 0.3rem;
@@ -57,4 +57,19 @@
 }
 .logo__user img {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    justify-content: flex-end;
+    background-color: #0079BF;
+  }
+  .title {
+    display: none;
+  }
 }

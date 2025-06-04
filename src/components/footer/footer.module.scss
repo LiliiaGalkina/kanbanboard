@@ -15,3 +15,25 @@
         margin-right: 3.6rem;
     }
 }
+
+@media (max-width: 768px) {
+    .footer {
+        &__autor {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        &__info {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .footer {
+        display: none;
+    }
+}

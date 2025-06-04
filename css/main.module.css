@@ -3,7 +3,23 @@
   padding: 2rem 2rem 3.2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  -moz-column-gap: 2.4rem;
-       column-gap: 2.4rem;
+  gap: 2.4rem;
   background-color: #0079BF;
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: 8.8rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 360px) {
+  .main {
+    padding-bottom: 18.6rem;
+  }
 }

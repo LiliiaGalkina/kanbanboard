@@ -78,3 +78,9 @@
   border-radius: 0.5rem;
   font-size: 1.8rem;
 }
+
+@media (max-width: 768px) {
+  .card__item {
+    font-size: 1.6rem;
+  }
+}
