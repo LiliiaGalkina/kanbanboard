@@ -54,16 +54,22 @@ function Main({tasksAll, setTasksAll}) {
   }
 
   function moveItem(e) {
-    const btnAddTask = e.target.parentElement;
-    const selectTasks = btnAddTask.previousElementSibling;
-    const btnSelectSubmit = btnAddTask.nextElementSibling;
-    selectTasks.style.display = "block";
-    btnAddTask.style.display = "none";
-    btnSelectSubmit.style.display = "block";
+    const type = e.target.parentElement.getAttribute("data-type");
+    const select = document.querySelector(`select[data-type = ${type}]`);
+    const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);
+    const btnSubmit = document.querySelector(`button#btnSubmit[data-type = ${type}]`);
+    select.style.display = "block";
+    select.focus();
+    btnAdd.style.display = "none";
+    btnSubmit.style.display = "block";
   }
 
   function changeOption(e) {
-    let id = e.target.previousElementSibling.previousElementSibling.value;
+    const type = e.target.getAttribute("data-type");
+    const select = document.querySelector(`select[data-type = ${type}]`);
+    const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);
+    const btnSubmit = document.querySelector(`button#btnSubmit[data-type = ${type}]`);
+    let id = select.value
     setTasksAll(
       tasksAll.map((task) => {
         if (task.id === id) {
@@ -83,9 +89,9 @@ function Main({tasksAll, setTasksAll}) {
         return task;
       })
     );
-    e.target.style.display = "none";
-    e.target.previousElementSibling.style.display = "flex";
-    e.target.previousElementSibling.previousElementSibling.style.display = "none";
+    btnSubmit.style.display = "none";
+    btnAdd.style.display = "flex";
+    select.style.display = "none";
   }
 
   return (

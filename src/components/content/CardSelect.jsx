@@ -14,15 +14,15 @@ export default function CardSelect({title, items, newItems, moveItem, selectType
         <div className={style.card__body}>
             {tasks}
         </div>
-        <select name="tasks" id={selectType} className={style.card__list} value={selectValue} onChange={(e) => setSelectValue(e.target.value)}>
+        <select name="tasks" id={selectType} className={style.card__list} data-type={selectType} value={selectValue} onChange={(e) => setSelectValue(e.target.value)}>
             <option></option>
            {options}
         </select>
-        <button className={style.card__button} onClick={moveItem}>
+        <button id="btnAdd" className={style.card__button} data-type={selectType} onClick={moveItem}>
             <img src={Image} alt="плюс" />
             <p>Add card</p>
         </button>
-        <button className={style.card__submit} onClick={changeOption}>Submit</button>
+        <button id="btnSubmit" className={style.card__submit} data-type={selectType} onClick={changeOption}>Submit</button>
     </div>
  )
 }
