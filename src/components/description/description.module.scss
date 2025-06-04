@@ -54,3 +54,40 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .description {
+        &__body {
+            padding-top: 7rem;
+        }
+        &__text {
+            max-width: 50rem;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .description {
+        &__title {
+            font-size: 2.2rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .description {
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        &__body {
+            padding-left: 1.5rem;
+        }
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__text {
+            font-size: 1.6rem;
+        }
+    }
+}
