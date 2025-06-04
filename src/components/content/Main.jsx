@@ -1,7 +1,7 @@
-
+import React from "react";
 import style from "./main.module.scss";
 import CardBacklog from "./Card";
-import CardSelect from "./CardSelect";
+import CardSelect from "./CardSelect"
 
 
 function Main({tasksAll, setTasksAll}) {
@@ -96,35 +96,35 @@ function Main({tasksAll, setTasksAll}) {
 
   return (
     <main className={style.main}>
-      <CardBacklog
-        items={tasks1}
-        inputNewTask={inputNewTask}
-        submitNewTask={submitNewTask}
-      />
-      <CardSelect
-        title="Ready"
-        items={tasks2}
-        newItems={tasks1}
-        selectType="ready"
-        moveItem={moveItem}
-        changeOption={changeOption}
-      />
-      <CardSelect
-        title="In Progress"
-        items={tasks3}
-        newItems={tasks2}
-        selectType="progress"
-        moveItem={moveItem}
-        changeOption={changeOption}
-      />
-      <CardSelect
-        title="Finished"
-        items={tasks4}
-        newItems={tasks3}
-        selectType="finish"
-        moveItem={moveItem}
-        changeOption={changeOption}
-      />
+                    <CardBacklog
+                        items={tasks1}
+                        inputNewTask={inputNewTask}
+                        submitNewTask={submitNewTask}
+                    />
+                    <CardSelect
+                        title="Ready"
+                        items={tasks2}
+                        newItems={tasks1}
+                        selectType="ready"
+                        moveItem={moveItem}
+                        changeOption={changeOption}
+                    />
+                    <CardSelect
+                        title="In Progress"
+                        items={tasks3}
+                        newItems={tasks2}
+                        selectType="progress"
+                        moveItem={moveItem}
+                        changeOption={changeOption}
+                    />
+                    <CardSelect
+                        title="Finished"
+                        items={tasks4}
+                        newItems={tasks3}
+                        selectType="finish"
+                        moveItem={moveItem}
+                        changeOption={changeOption}
+                    />
     </main>
   );
 }

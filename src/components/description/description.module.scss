@@ -1,0 +1,56 @@
+.wrapper {
+    flex: 1 1 auto;
+    display: flex;
+   
+}
+
+.description {
+    padding: 2.2rem 2.6rem;
+    background-color: #0079BF;
+    display: flex;
+    flex: 1;
+  
+    &__body {
+        position: relative;
+        width: 100%;
+        padding: 2.2rem 2.8rem;
+        border-radius: 0.5rem;
+        background-color: #FFFFFF;
+    }
+
+    &__title {
+        margin-bottom: 3.5rem;
+        font-size: 2.4rem;
+    }
+
+    &__text {
+        max-width: 62.1rem;
+    }
+
+    &__close {
+        width: 3.25rem;
+        height: 3.25rem;
+        position: absolute;
+        top: 1.7rem;
+        right: 2.3rem;
+        cursor: pointer;
+
+        span {
+            position: absolute;
+            top: 1.6rem;
+            display: block;
+            width: 3.25rem;
+            height: 0.1rem;
+            background-color: #000000;
+        }
+
+        span:first-child {
+            transform: rotate(45deg);
+        }
+
+        span:last-child {
+            transform: rotate(-45deg);
+        }
+    }
+}
+

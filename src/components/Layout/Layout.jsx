@@ -1,9 +1,10 @@
 import Header from "../header/Header";
-import { Main } from "../content/Main";
 import Footer from "../footer/Footer";
-import style from "./layout.module.scss"
-import { useState, useEffect } from "react";
+import Context from "../content/Content";
 import { data } from "../../tasks";
+import { useState, useEffect } from "react";
+import style from "./layout.module.scss";
+import { BrowserRouter as Router } from "react-router-dom";
 
 export default function Layout() {
     const initialTasks = () => {
@@ -19,9 +20,11 @@ export default function Layout() {
 
   return (
     <div className={style.container}>
-      <Header />
-      <Main tasksAll={tasksAll} setTasksAll={setTasksAll}/>
-      <Footer tasksAll={tasksAll}/>
+        <Router>
+            <Header />
+            <Context tasksAll={tasksAll} setTasksAll={setTasksAll}/>
+            <Footer tasksAll={tasksAll}/>
+        </Router>
     </div>
   );
 }
