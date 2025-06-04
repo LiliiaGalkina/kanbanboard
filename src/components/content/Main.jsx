@@ -1,20 +1,11 @@
-import { useState, useEffect } from "react";
+
 import style from "./main.module.scss";
 import CardBacklog from "./Card";
 import CardSelect from "./CardSelect";
-import { data } from "../../tasks";
 
-function Main() {
-  const initialTasks = () => {
-    const tasksStr = localStorage.getItem("tasks");
-    return tasksStr ? JSON.parse(tasksStr) : data;
-  };
 
-  const [tasksAll, setTasksAll] = useState(initialTasks);
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasksAll));
-  }, [tasksAll]);
+function Main({tasksAll, setTasksAll}) {
+  
 
   const tasks1 = tasksAll.filter((elem) => elem.isBacklog === true);
   const tasks2 = tasksAll.filter((elem) => elem.isReady === true);
