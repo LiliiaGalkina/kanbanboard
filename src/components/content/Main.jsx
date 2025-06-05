@@ -1,11 +1,12 @@
 import React from "react";
 import style from "./main.module.scss";
 import CardBacklog from "./Card";
-import CardSelect from "./CardSelect"
+import CardSelect from "./CardSelect";
+import { useState } from "react";
 
 
 function Main({tasksAll, setTasksAll}) {
-  
+const [newTask, setNewTask] = useState("");
 
   const tasks1 = tasksAll.filter((elem) => elem.isBacklog === true);
   const tasks2 = tasksAll.filter((elem) => elem.isReady === true);
@@ -46,8 +47,8 @@ function Main({tasksAll, setTasksAll}) {
       newTask.isProgress = false;
       newTask.isFinished = false;
       setTasksAll([...tasksAll, newTask]);
-      inputTask.value = "";
     }
+    setNewTask("");
     inputTask.style.display = "none";
     buttonSubmit.style.display = "none";
     buttonAdd.style.display = "flex";
@@ -60,7 +61,6 @@ function Main({tasksAll, setTasksAll}) {
     const btnSubmit = document.querySelector(`button#btnSubmit[data-type = ${type}]`);
     if(select.length > 1) {
         select.style.display = "block";
-        select.focus();
         btnAdd.style.display = "none";
         btnSubmit.style.display = "block";
         btnAdd.parentElement.scrollTop = btnAdd.parentElement.scrollHeight;
@@ -105,6 +105,8 @@ function Main({tasksAll, setTasksAll}) {
                         items={tasks1}
                         inputNewTask={inputNewTask}
                         submitNewTask={submitNewTask}
+                        newTask={newTask}
+                        setNewTask={setNewTask}
                     />
                     <CardSelect
                         title="Ready"
