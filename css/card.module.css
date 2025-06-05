@@ -58,6 +58,19 @@
 .card__button:hover {
   color: #000000;
 }
+.card__button_disable {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  opacity: 0.2;
+  cursor: default;
+}
+.card__button_disable img {
+  max-width: 1.6rem;
+}
+.card__button_disable p {
+  margin-left: 0.3rem;
+}
 .card__submit {
   display: none;
   width: 10.2rem;

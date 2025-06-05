@@ -58,10 +58,15 @@ function Main({tasksAll, setTasksAll}) {
     const select = document.querySelector(`select[data-type = ${type}]`);
     const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);
     const btnSubmit = document.querySelector(`button#btnSubmit[data-type = ${type}]`);
-    select.style.display = "block";
-    select.focus();
-    btnAdd.style.display = "none";
-    btnSubmit.style.display = "block";
+    if(select.length > 1) {
+        select.style.display = "block";
+        select.focus();
+        btnAdd.style.display = "none";
+        btnSubmit.style.display = "block";
+        btnAdd.parentElement.scrollTop = btnAdd.parentElement.scrollHeight;
+    } else {
+        return
+    }
   }
 
   function changeOption(e) {

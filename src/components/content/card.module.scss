@@ -67,6 +67,21 @@
         }
     }
 
+    &__button_disable {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        opacity: 0.2;
+        cursor: default;
+
+        img {
+            max-width: 1.6rem;
+        }
+        p {
+            margin-left: 0.3rem;
+        }
+    }
+
     &__submit {
         display: none;
         width: 10.2rem;

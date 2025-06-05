@@ -10,17 +10,19 @@ export default function CardSelect({title, items, newItems, moveItem, selectType
     
     const options = newItems.map(elem => <option key={elem.id} value={elem.id}>{elem.name}</option>)
 
+   
+
  return(
     <div className={style.card}>
         <h2 className={style.card__title}>{title}</h2>
         <div className={style.card__body}>
             {tasks}
         </div>
-        <select name="tasks" id={selectType} className={style.card__list} data-type={selectType} value={selectValue} onChange={(e) => setSelectValue(e.target.value)}>
+        <select name="tasks" id={selectType} className={style.card__list} data-type={selectType} data-disable="false" value={selectValue} onChange={(e) => setSelectValue(e.target.value)}>
             <option></option>
            {options}
         </select>
-        <button id="btnAdd" className={style.card__button} data-type={selectType} onClick={moveItem}>
+        <button id="btnAdd" className={options.length === 0 ? style.card__button_disable : style.card__button} data-type={selectType} onClick={moveItem}>
             <img src={Image} alt="плюс" />
             <p>Add card</p>
         </button>
