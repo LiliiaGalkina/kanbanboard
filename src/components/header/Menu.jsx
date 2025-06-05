@@ -7,19 +7,6 @@ import style from "./header.module.scss"
 export default function Menu(){
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-       /* function showMenu(){
-            const menu = document.querySelector("#menu");
-            let logoArrow = document.querySelector("#logoArrow");
-          
-           if(menu.style.display === "none"){
-            menu.style.display = "block";
-            logoArrow.style.transform = "rotate(180deg)"
-           } else {
-            menu.style.display = "none";
-            logoArrow.style.transform = "rotate(0deg)"
-           }
-        }*/
-
         const toggleMenu = () => {
             setIsMenuVisible(!isMenuVisible);
         };
