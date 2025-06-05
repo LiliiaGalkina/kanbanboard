@@ -1,5 +1,5 @@
+import React from "react";
 import style from "./footer.module.scss";
-
 
 export default function Footer({tasksAll}){
     const backlogCount = tasksAll.filter((elem) => elem.isBacklog === true).length;

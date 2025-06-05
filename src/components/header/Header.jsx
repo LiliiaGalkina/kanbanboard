@@ -1,3 +1,4 @@
+import React from "react"
 import Menu from "./Menu"
 import style from "./header.module.scss"
 

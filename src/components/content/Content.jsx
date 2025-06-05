@@ -8,7 +8,7 @@ export default function Context({tasksAll, setTasksAll}){
     return (
         <Routes>
             <Route path={"/"} element={<Main tasksAll={tasksAll} setTasksAll={setTasksAll}/>}/>
-            <Route path={`/:elemId`} element={<Description tasksAll={tasksAll}/>}/>
+            <Route path={`/:elemId`} element={<Description tasksAll={tasksAll} setTaskAll={setTasksAll}/>}/>
         </Routes>
     )
 }

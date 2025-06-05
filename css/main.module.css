@@ -10,16 +10,12 @@
 @media (max-width: 768px) {
   .main {
     padding-top: 8.8rem;
+    padding-bottom: 18.6rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 480px) {
   .main {
     grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 360px) {
-  .main {
-    padding-bottom: 18.6rem;
   }
 }

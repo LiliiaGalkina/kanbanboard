@@ -1,11 +1,10 @@
-import { useState } from "react";
+import React from "react";
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
 import { Link } from "react-router-dom";
 
 export default function CardBacklog({items, inputNewTask, submitNewTask, newTask, setNewTask}){
  
-
     const tasks = items.map(elem => <Link to={`/${elem.id}`} key={elem.id} className={style.card__item} ><div >{elem.name}</div></Link>)
   
    

@@ -1,3 +1,4 @@
+import React from "react";
 import Logo from "../../img/user-avatar.svg"
 import arrow from "../../img/arrow-down-white.svg"
 import style from "./header.module.scss"

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
@@ -9,8 +10,6 @@ export default function CardSelect({title, items, newItems, moveItem, selectType
     const tasks = items.map(elem => <Link to={`/${elem.id}`} key={elem.id} className={style.card__item} ><div >{elem.name}</div></Link>)
     
     const options = newItems.map(elem => <option key={elem.id} value={elem.id}>{elem.name}</option>)
-
-   
 
  return(
     <div className={style.card}>

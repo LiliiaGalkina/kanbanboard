@@ -22,6 +22,8 @@
 }
 .description__text {
   max-width: 62.1rem;
+  width: 100%;
+  height: 90%;
 }
 .description__close {
   width: 3.25rem;
