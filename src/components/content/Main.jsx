@@ -13,9 +13,8 @@ const [newTask, setNewTask] = useState("");
   const tasks3 = tasksAll.filter((elem) => elem.isProgress === true);
   const tasks4 = tasksAll.filter((elem) => elem.isFinished === true);
 
-  function makeId() {
-    const strsource =
-      "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+ const makeId = () => {
+    const strsource = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     let id = "";
     for (let i = 0; i < 10; i++) {
       id += strsource[Math.floor(Math.random() * strsource.length)];
@@ -23,7 +22,7 @@ const [newTask, setNewTask] = useState("");
     return id;
   }
 
-  function inputNewTask() {
+  const inputNewTask = () => {
     const inputTask = document.querySelector("#newTask");
     const buttonAdd = document.querySelector("#cardButtonAdd");
     const buttonSubmit = document.querySelector("#cardButtonSubmit");
@@ -33,7 +32,7 @@ const [newTask, setNewTask] = useState("");
     buttonSubmit.style.display = "block";
   }
 
-  function submitNewTask() {
+  const submitNewTask = () => {
     const inputTask = document.querySelector("#newTask");
     const buttonAdd = document.querySelector("#cardButtonAdd");
     const buttonSubmit = document.querySelector("#cardButtonSubmit");
@@ -54,7 +53,7 @@ const [newTask, setNewTask] = useState("");
     buttonAdd.style.display = "flex";
   }
 
-  function moveItem(e) {
+  const moveItem = (e) => {
     const type = e.target.parentElement.getAttribute("data-type");
     const select = document.querySelector(`select[data-type = ${type}]`);
     const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);
@@ -69,7 +68,7 @@ const [newTask, setNewTask] = useState("");
     }
   }
 
-  function changeOption(e) {
+  const changeOption = (e) => {
     const type = e.target.getAttribute("data-type");
     const select = document.querySelector(`select[data-type = ${type}]`);
     const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);

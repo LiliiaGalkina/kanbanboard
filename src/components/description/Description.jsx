@@ -10,7 +10,7 @@ export default function Description({tasksAll, setTaskAll}){
  
     const [textDescription, setTextDescription] = useState(task[0].description ? task[0].description : "no description");
 
-    function saveDescription(){
+    const saveDescription = () =>{
         setTaskAll(
             tasksAll.map((task) => {
               if (task.id === taskId) {
