@@ -1,10 +1,15 @@
 .header {
   position: relative;
   padding: 0.7rem 1.6rem 0.8rem 1.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   background-color: #0067a3;
+  .container {
+    margin: 0 auto;
+    max-width: 126.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .title {
@@ -74,11 +79,14 @@
 }
 
 @media (max-width: 480px) {
-    .header {
-        justify-content: flex-end;
-        background-color: #0079BF;
+  .header {
+    background-color: #0079bf;
+
+    .container {
+      justify-content: flex-end;
     }
-    .title {
-        display: none;
-    }
+  }
+  .title {
+    display: none;
+  }
 }

@@ -1,24 +1,31 @@
 .main {
-    flex: 1 1 auto;
-    padding: 2rem 2rem 3.2rem;
+  flex: 1 1 auto;
+  padding: 2rem 2rem 3.2rem;
+  background-color: #0079bf;
+
+  .container {
+    margin: 0 auto;
+    max-width: 126.5rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.4rem;
-    background-color: #0079BF;    
+  }
 }
 
 @media (max-width: 768px) {
-    .main {
-        padding-top: 8.8rem;
-        padding-bottom: 18.6rem;
-        grid-template-columns: repeat(2, 1fr);
+  .main {
+	padding: 8.8rem 0.5rem 18.6rem;
+
+    .container {
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
 }
 
 @media (max-width: 480px) {
-    .main {
-        grid-template-columns: 1fr;
+  .main {
+    .container {
+      grid-template-columns: 1fr;
     }
+  }
 }
-
-

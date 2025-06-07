@@ -1,10 +1,14 @@
 .footer {
   padding: 1.7rem 1.9rem 1.7rem 2.1rem;
+  background-color: #0067a3;
+  color: #ffffff;
+}
+.footer .container {
+  margin: 0 auto;
+  max-width: 126.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0067A3;
-  color: #FFFFFF;
 }
 .footer__info {
   display: flex;
