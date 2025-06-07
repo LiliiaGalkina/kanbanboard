@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import Context from "../content/Content";
+import AppRouter from "../content/AppRouter";
 import { data } from "../../tasks";
 import { useState, useEffect } from "react";
 import style from "./layout.module.scss";
@@ -23,7 +23,7 @@ export default function Layout() {
     <div className={style.container}>
         <Router>
             <Header />
-            <Context tasksAll={tasksAll} setTasksAll={setTasksAll}/>
+            <AppRouter tasksAll={tasksAll} setTasksAll={setTasksAll}/>
             <Footer tasksAll={tasksAll}/>
         </Router>
     </div>

@@ -2,15 +2,28 @@ import React from "react";
 import style from "./main.module.scss";
 import CardBacklog from "./Card";
 import CardSelect from "./CardSelect";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 function Main({ tasksAll, setTasksAll }) {
-  const [newTask, setNewTask] = useState("");
+	const [newTask, setNewTask] = useState("");
+	const [isInputvisible, setIsInputVisible] = useState(false);
 
-  const tasks1 = tasksAll.filter((elem) => elem.isBacklog === true);
-  const tasks2 = tasksAll.filter((elem) => elem.isReady === true);
-  const tasks3 = tasksAll.filter((elem) => elem.isProgress === true);
-  const tasks4 = tasksAll.filter((elem) => elem.isFinished === true);
+  const tasks1 = useMemo(
+    () => tasksAll.filter((elem) => elem.isBacklog === true),
+    [tasksAll]
+  );
+  const tasks2 = useMemo(
+    () => tasksAll.filter((elem) => elem.isReady === true),
+    [tasksAll]
+  );
+  const tasks3 = useMemo(
+    () => tasksAll.filter((elem) => elem.isProgress === true),
+    [tasksAll]
+  );
+  const tasks4 = useMemo(
+    () => tasksAll.filter((elem) => elem.isFinished === true),
+    [tasksAll]
+  );
 
   const makeId = () => {
     const strsource =
@@ -22,38 +35,29 @@ function Main({ tasksAll, setTasksAll }) {
     return id;
   };
 
-  const inputNewTask = () => {
-    const inputTask = document.querySelector("#newTask");
-    const buttonAdd = document.querySelector("#cardButtonAdd");
-    const buttonSubmit = document.querySelector("#cardButtonSubmit");
-    inputTask.style.display = "block";
-    inputTask.focus();
-    buttonAdd.style.display = "none";
-    buttonSubmit.style.display = "block";
-  };
+	 const handleInputNewTask = () => {
+     setIsInputVisible(true);
+   };
 
-  const submitNewTask = () => {
-    const inputTask = document.querySelector("#newTask");
-    const buttonAdd = document.querySelector("#cardButtonAdd");
-    const buttonSubmit = document.querySelector("#cardButtonSubmit");
-    if (inputTask.value !== "") {
-      let newTask = {};
-      newTask.id = makeId();
-      newTask.name = inputTask.value;
-      newTask.description = "This task has no description";
-      newTask.isBacklog = true;
-      newTask.isReady = false;
-      newTask.isProgress = false;
-      newTask.isFinished = false;
-      setTasksAll([...tasksAll, newTask]);
+	const handleSubmitNewTask = () => {
+    if (newTask) {
+      const newTaskObj = {
+        id: makeId(),
+        name: newTask,
+        description: "This task has no description",
+        isBacklog: true,
+        isReady: false,
+        isProgress: false,
+        isFinished: false,
+      };
+		setTasksAll([...tasksAll, newTaskObj]);
+		setNewTask("");
+		setIsInputVisible(false);
     }
-    setNewTask("");
-    inputTask.style.display = "none";
-    buttonSubmit.style.display = "none";
-    buttonAdd.style.display = "flex";
   };
+	
 
-  const moveItem = (e) => {
+	const moveItem = (e) => {
     const type = e.target.parentElement.getAttribute("data-type");
     const select = document.querySelector(`select[data-type = ${type}]`);
     const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);
@@ -107,10 +111,11 @@ function Main({ tasksAll, setTasksAll }) {
       <div className={style.container}>
         <CardBacklog
           items={tasks1}
-          inputNewTask={inputNewTask}
-          submitNewTask={submitNewTask}
           newTask={newTask}
           setNewTask={setNewTask}
+          isInputVisible={isInputvisible}
+          handleInputNewTask={handleInputNewTask}
+          handleSubmitNewTask={handleSubmitNewTask}
         />
         <CardSelect
           title="Ready"
