@@ -9,7 +9,6 @@ export default function CardSelect({
 	newItems,
 	isSelectVisible,
 	handleMoveTask,
-	selectType,
 	changeOption,
 	selectValue,
 	setSelectValue
@@ -33,9 +32,7 @@ export default function CardSelect({
       <div className={style.card__body}>{tasks}</div>
       <select
         name="tasks"
-        id={selectType}
         className={style.card__list}
-        data-type={selectType}
         data-disable="false"
         value={selectValue}
         onChange={(e) => setSelectValue(e.target.value)}
@@ -49,7 +46,6 @@ export default function CardSelect({
         className={
           options.length === 0 ? style.card__button_disable : style.card__button
         }
-        data-type={selectType}
 			  onClick={options.length > 0 ? handleMoveTask : ()=>{}}
         style={{ display: isSelectVisible ? "none" : "flex" }}
       >
@@ -59,7 +55,6 @@ export default function CardSelect({
       <button
         id="btnSubmit"
         className={style.card__submit}
-        data-type={selectType}
         onClick={changeOption}
         style={{display: isSelectVisible ? "block" : "none" }}
       >

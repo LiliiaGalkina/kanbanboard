@@ -2,7 +2,7 @@ import React from "react";
 import style from "./main.module.scss";
 import CardBacklog from "./Card";
 import CardSelect from "./CardSelect";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo} from "react";
 
 function Main({ tasksAll, setTasksAll }) {
 	const [newTask, setNewTask] = useState("");
@@ -114,7 +114,6 @@ function Main({ tasksAll, setTasksAll }) {
           title="Ready"
           items={tasks2}
           newItems={tasks1}
-          selectType="ready"
           isSelectVisible={isSelectVisible1}
           handleMoveTask={handleMoveTask1}
           changeOption={changeOption}
@@ -125,7 +124,6 @@ function Main({ tasksAll, setTasksAll }) {
           title="In Progress"
           items={tasks3}
           newItems={tasks2}
-          selectType="progress"
           isSelectVisible={isSelectVisible2}
           handleMoveTask={handleMoveTask2}
           changeOption={changeOption}
@@ -136,7 +134,6 @@ function Main({ tasksAll, setTasksAll }) {
           title="Finished"
           items={tasks4}
           newItems={tasks3}
-          selectType="finish"
           isSelectVisible={isSelectVisible3}
           handleMoveTask={handleMoveTask3}
           changeOption={changeOption}
