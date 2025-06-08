@@ -2,6 +2,7 @@ import React from "react";
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
 import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 export default function CardSelect({
 	title,
@@ -25,9 +26,15 @@ export default function CardSelect({
       {elem.name}
     </option>
   ));
+	
+const scrollRef = useRef(null);
+
+   useEffect(() => {
+	   scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+   }, [isSelectVisible]);
 
   return (
-    <div className={style.card}>
+    <div className={style.card} ref={scrollRef}>
       <h2 className={style.card__title}>{title}</h2>
       <div className={style.card__body}>{tasks}</div>
       <select
