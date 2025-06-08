@@ -2,11 +2,16 @@ import React from "react";
 import style from "./main.module.scss";
 import CardBacklog from "./Card";
 import CardSelect from "./CardSelect";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 function Main({ tasksAll, setTasksAll }) {
 	const [newTask, setNewTask] = useState("");
-	const [isInputvisible, setIsInputVisible] = useState(false);
+	const [selectValue, setSelectValue] = useState("");
+	const [isInputVisible, setIsInputVisible] = useState(false);
+	const [isSelectVisible1, setIsSelectVisible1] = useState(false);
+	const [isSelectVisible2, setIsSelectVisible2] = useState(false);
+	const [isSelectVisible3, setIsSelectVisible3] = useState(false);
+	
 
   const tasks1 = useMemo(
     () => tasksAll.filter((elem) => elem.isBacklog === true),
@@ -35,7 +40,7 @@ function Main({ tasksAll, setTasksAll }) {
     return id;
   };
 
-	 const handleInputNewTask = () => {
+	const handleInputNewTask = () => {
      setIsInputVisible(true);
    };
 
@@ -54,34 +59,23 @@ function Main({ tasksAll, setTasksAll }) {
 		setNewTask("");
 		setIsInputVisible(false);
     }
-  };
+	};
 	
 
-	const moveItem = (e) => {
-    const type = e.target.parentElement.getAttribute("data-type");
-    const select = document.querySelector(`select[data-type = ${type}]`);
-    const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);
-    const btnSubmit = document.querySelector(
-      `button#btnSubmit[data-type = ${type}]`
-    );
-    if (select.length > 1) {
-      select.style.display = "block";
-      btnAdd.style.display = "none";
-      btnSubmit.style.display = "block";
-      btnAdd.parentElement.scrollTop = btnAdd.parentElement.scrollHeight;
-    } else {
-      return;
-    }
+	const handleMoveTask1 = (e) => {
+    setIsSelectVisible1(true);
   };
 
+	const handleMoveTask2 = (e) => {
+      setIsSelectVisible2(true);
+	};
+		const handleMoveTask3 = (e) => {
+      setIsSelectVisible3(true);
+    };
+
+
   const changeOption = (e) => {
-    const type = e.target.getAttribute("data-type");
-    const select = document.querySelector(`select[data-type = ${type}]`);
-    const btnAdd = document.querySelector(`button#btnAdd[data-type = ${type}]`);
-    const btnSubmit = document.querySelector(
-      `button#btnSubmit[data-type = ${type}]`
-    );
-    let id = select.value;
+	  let id = selectValue;
     setTasksAll(
       tasksAll.map((task) => {
         if (task.id === id) {
@@ -100,10 +94,9 @@ function Main({ tasksAll, setTasksAll }) {
         }
         return task;
       })
-    );
-    btnSubmit.style.display = "none";
-    btnAdd.style.display = "flex";
-    select.style.display = "none";
+	  );
+	  setSelectValue("");
+	  isSelectVisible1 === true ? setIsSelectVisible1(false) : isSelectVisible2 === true ? setIsSelectVisible2(false) : setIsSelectVisible3(false);
   };
 
   return (
@@ -113,7 +106,7 @@ function Main({ tasksAll, setTasksAll }) {
           items={tasks1}
           newTask={newTask}
           setNewTask={setNewTask}
-          isInputVisible={isInputvisible}
+          isInputVisible={isInputVisible}
           handleInputNewTask={handleInputNewTask}
           handleSubmitNewTask={handleSubmitNewTask}
         />
@@ -122,24 +115,33 @@ function Main({ tasksAll, setTasksAll }) {
           items={tasks2}
           newItems={tasks1}
           selectType="ready"
-          moveItem={moveItem}
+          isSelectVisible={isSelectVisible1}
+          handleMoveTask={handleMoveTask1}
           changeOption={changeOption}
+          selectValue={selectValue}
+          setSelectValue={setSelectValue}
         />
         <CardSelect
           title="In Progress"
           items={tasks3}
           newItems={tasks2}
           selectType="progress"
-          moveItem={moveItem}
+          isSelectVisible={isSelectVisible2}
+          handleMoveTask={handleMoveTask2}
           changeOption={changeOption}
+          selectValue={selectValue}
+          setSelectValue={setSelectValue}
         />
         <CardSelect
           title="Finished"
           items={tasks4}
           newItems={tasks3}
           selectType="finish"
-          moveItem={moveItem}
+          isSelectVisible={isSelectVisible3}
+          handleMoveTask={handleMoveTask3}
           changeOption={changeOption}
+          selectValue={selectValue}
+          setSelectValue={setSelectValue}
         />
       </div>
     </main>

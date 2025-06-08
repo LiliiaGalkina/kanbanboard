@@ -2,7 +2,7 @@ import React from "react";
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 
 export default function CardBacklog({
   items,
