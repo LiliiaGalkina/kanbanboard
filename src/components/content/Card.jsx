@@ -2,6 +2,7 @@ import React from "react";
 import Image from "../../img/add-card.svg";
 import style from "./card.module.scss";
 import { Link } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 
 export default function CardBacklog({
@@ -17,9 +18,17 @@ export default function CardBacklog({
       <div>{elem.name}</div>
     </Link>
   ));
+	
+	const inputRef = useRef(null);
+	const scrollRef = useRef(null);
+
+	  useEffect(() => {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      inputRef.current.focus();
+    }, [isInputVisible]);
 
   return (
-    <div className={style.card}>
+    <div className={style.card} ref={scrollRef}>
       <h2 className={style.card__title}>Backlog</h2>
       <div className={style.card__body}>{tasks}</div>
       <input 
@@ -27,7 +36,8 @@ export default function CardBacklog({
 		type="text"
 		className={style.card__newitem}
         value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
+			  onChange={(e) => setNewTask(e.target.value)}
+			  ref={inputRef}
         style={{ display: isInputVisible ? "block" : "none" }}
       />
       <button

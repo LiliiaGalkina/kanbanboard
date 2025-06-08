@@ -5,16 +5,15 @@ import { Link } from "react-router-dom";
 import { useRef, useEffect } from "react";
 
 export default function CardSelect({
-	title,
-	items,
-	newItems,
-	isSelectVisible,
-	handleMoveTask,
-	changeOption,
-	selectValue,
-	setSelectValue
+  title,
+  items,
+  newItems,
+  isSelectVisible,
+  handleMoveTask,
+  changeOption,
+  selectValue,
+  setSelectValue,
 }) {
-
   const tasks = items.map((elem) => (
     <Link to={`/${elem.id}`} key={elem.id} className={style.card__item}>
       <div>{elem.name}</div>
@@ -26,12 +25,12 @@ export default function CardSelect({
       {elem.name}
     </option>
   ));
-	
-const scrollRef = useRef(null);
 
-   useEffect(() => {
-	   scrollRef.current.scrollTop = scrollRef.current.scrollHeight
-   }, [isSelectVisible]);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  }, [isSelectVisible]);
 
   return (
     <div className={style.card} ref={scrollRef}>
@@ -53,7 +52,7 @@ const scrollRef = useRef(null);
         className={
           options.length === 0 ? style.card__button_disable : style.card__button
         }
-			  onClick={options.length > 0 ? handleMoveTask : ()=>{}}
+        onClick={options.length > 0 ? handleMoveTask : () => {}}
         style={{ display: isSelectVisible ? "none" : "flex" }}
       >
         <img src={Image} alt="плюс" />
@@ -63,7 +62,7 @@ const scrollRef = useRef(null);
         id="btnSubmit"
         className={style.card__submit}
         onClick={changeOption}
-        style={{display: isSelectVisible ? "block" : "none" }}
+        style={{ display: isSelectVisible ? "block" : "none" }}
       >
         Submit
       </button>
