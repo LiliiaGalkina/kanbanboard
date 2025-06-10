@@ -6,7 +6,6 @@ import { Link, useMatch } from "react-router-dom";
 export default function Description({tasksAll, setTaskAll}){
 	const match = useMatch("/:id");
     const taskId = match.params.id;
-	console.log(taskId);
     const task = tasksAll.find(elem => elem.id === taskId);
     const [textDescription, setTextDescription] = useState(task.description ? task.description : "no description");
 
