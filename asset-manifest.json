@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/kanbanboard/static/css/main.b340f073.css",
-    "main.js": "/kanbanboard/static/js/main.3d373ecf.js",
+    "main.js": "/kanbanboard/static/js/main.5c277e42.js",
     "static/js/453.325bd600.chunk.js": "/kanbanboard/static/js/453.325bd600.chunk.js",
     "static/media/user-avatar.svg": "/kanbanboard/static/media/user-avatar.92910b3defa49c71ceb76f9242b1b130.svg",
     "index.html": "/kanbanboard/index.html",
     "static/media/arrow-down-white.svg": "/kanbanboard/static/media/arrow-down-white.79b9a425c16f47c08777b55fad816362.svg",
     "static/media/add-card.svg": "/kanbanboard/static/media/add-card.87015637c2ec387005512d52f68faadb.svg",
     "main.b340f073.css.map": "/kanbanboard/static/css/main.b340f073.css.map",
-    "main.3d373ecf.js.map": "/kanbanboard/static/js/main.3d373ecf.js.map",
+    "main.5c277e42.js.map": "/kanbanboard/static/js/main.5c277e42.js.map",
     "453.325bd600.chunk.js.map": "/kanbanboard/static/js/453.325bd600.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b340f073.css",
-    "static/js/main.3d373ecf.js"
+    "static/js/main.5c277e42.js"
   ]
 }
