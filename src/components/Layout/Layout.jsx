@@ -5,7 +5,7 @@ import AppRouter from "../content/AppRouter";
 import { data } from "../../tasks";
 import { useState, useEffect } from "react";
 import style from "./layout.module.scss";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 
 export default function Layout() {
     const initialTasks = () => {
